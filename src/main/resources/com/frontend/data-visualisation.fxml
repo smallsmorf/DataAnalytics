@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<GridPane
+    vgap="10" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.frontend.DataVisualisationController"
+    alignment="TOP_CENTER"
+    prefWidth="350"
+    prefHeight="350"
+>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox
+        GridPane.rowIndex="0"
+        GridPane.halignment="CENTER"
+        prefWidth="800"
+        alignment="CENTER"
+    >
+        <Label text="Distribution of #Shares" style="-fx-font-size: 20pt; -fx-font-weight: bold;" />
+    </VBox>
+
+    <VBox
+        maxHeight="200"
+        GridPane.rowIndex="1"
+    >
+        <PieChart
+            fx:id="pieChart"
+        />
+    </VBox>
+
+    <Button
+        fx:id="back"
+        prefWidth="100"
+        prefHeight="40"
+        GridPane.rowIndex="3"
+        text="Back"
+        onMouseClicked="#onClickBack"
+    />
+
+    <Label fx:id="caption" style="-fx-font-weight: bold"/>
+
+</GridPane>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+
+
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<GridPane vgap="10" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.frontend.SignUpController"
+          alignment="CENTER"
+>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
+        <Label text="Sign Up" style="-fx-font-size: 24pt; -fx-font-weight: bold;" />
+    </VBox>
+
+    <TextField
+        fx:id="username"
+        promptText="Username"
+        GridPane.rowIndex="1"
+    />
+
+    <GridPane
+        GridPane.rowIndex="2"
+        alignment="CENTER"
+        hgap="5"
+    >
+        <TextField
+            fx:id="firstName"
+            promptText="First Name"
+            GridPane.columnIndex="0"
+        />
+
+        <TextField
+            fx:id="lastName"
+            promptText="Last Name"
+            GridPane.columnIndex="1"
+        />
+    </GridPane>
+
+    <PasswordField
+        fx:id="password"
+        promptText="Password"
+        GridPane.rowIndex="3"
+    />
+
+    <PasswordField
+        fx:id="confirmPassword"
+        promptText="Confirm Password"
+        GridPane.rowIndex="4"
+    />
+
+    <Button
+        text="Submit"
+        fx:id="submit"
+        onAction="#onSignUpButtonClick"
+        GridPane.rowIndex="5"
+        GridPane.halignment="CENTER"
+    />
+
+    <HBox
+        GridPane.rowIndex="6"
+        alignment="CENTER"
+    >
+        <Label
+            text="Already have an account?"
+            style="-fx-font-size: 8pt;"
+        />
+        <Label
+            fx:id="toLogin"
+            text="Sign in here"
+            style="-fx-font-size: 8pt; -fx-underline: true; -fx-cursor: hand"
+            onMouseClicked="#goToLogin"
+        />
+    </HBox>
+
+    <VBox
+        GridPane.rowIndex="8"
+        alignment="CENTER"
+    >
+        <Label fx:id="diagnostic" style="-fx-text-fill: red; -fx-font-size: 12pt;"/>
+    </VBox>
+
+</GridPane>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<GridPane
+    vgap="10" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.frontend.TopPostsController"
+>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <VBox
+        GridPane.rowIndex="0"
+        GridPane.halignment="CENTER"
+        prefWidth="800"
+        alignment="CENTER"
+    >
+        <Label text="Top Posts" style="-fx-font-size: 20pt; -fx-font-weight: bold;" />
+    </VBox>
+
+    <HBox
+        GridPane.rowIndex="1"
+        GridPane.halignment="LEFT"
+        alignment="CENTER_LEFT"
+        spacing="10"
+    >
+        <Label text="Number of Posts:"/>
+        <TextField
+            fx:id="numField"
+            promptText="Enter a number"
+        />
+    </HBox>
+
+    <HBox
+        GridPane.rowIndex="2"
+        GridPane.halignment="LEFT"
+        alignment="CENTER_LEFT"
+        spacing="5"
+    >
+        <Label text="Author (optional): "/>
+        <TextField
+            fx:id="authorField"
+            promptText="Enter author name"
+        />
+
+        <Button
+            GridPane.rowIndex="1"
+            text="Search"
+            onMouseClicked="#onRetrieveTopPosts"
+        />
+    </HBox>
+
+    <TableView
+        GridPane.rowIndex="4"
+        fx:id="tableView"
+        prefHeight="500"
+    >
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="60"/>
+            <TableColumn fx:id="contentColumn" text="Content" prefWidth="300"/>
+            <TableColumn fx:id="authorColumn" text="Author" prefWidth="120"/>
+            <TableColumn fx:id="likesColumn" text="Likes"/>
+            <TableColumn fx:id="sharesColumn" text="Shares"/>
+            <TableColumn fx:id="datetimeColumn" text="Date Time" prefWidth="110"/>
+        </columns>
+    </TableView>
+
+    <Button
+        fx:id="back"
+        text="Back"
+        GridPane.rowIndex="6"
+        onMouseClicked="#onClickBack"
+        prefWidth="100"
+        prefHeight="40"
+    />
+
+    <VBox
+        GridPane.rowIndex="7"
+        alignment="CENTER"
+    >
+        <Label fx:id="diagnostic" style="-fx-text-fill: red; -fx-font-size: 12pt;"/>
+    </VBox>
+</GridPane>
